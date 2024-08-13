@@ -1,33 +1,38 @@
-import BanClasses from "@/components/banclasses"
 import CourseCard from "@/components/coursecard"
+import Banner from "@/components/banner";
 
 const courses = [
   {
     title: "Salsa",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eaque suscipit officiis nesciunt magni ipsum consequuntur tenetur explicabo natus? Harum.",
-    image: "/salsacopi.jpeg",
+    description: "Salsa is a lively and exhilarating dance that not only boosts your confidence and relieves stress but also brings people together on the dance floor. With our thoughtfully crafted syllabus, each student builds a solid foundation, ensuring smooth and enjoyable progress as you master the vibrant world of Salsa.",
+    image: "/sal.png",
     link: "/salsa",
   },
   {
     title: "Bachata",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eaque suscipit officiis nesciunt magni ipsum consequuntur tenetur explicabo natus? Harum.",
-    image: "/bachcopi.jpeg",
+    description: "Bachata, known as the 'romantic rhythm' of Latin dances, is a sensual and expressive style that originates from the Dominican Republic. Easy to learn and delightful to dance, Bachata invites you to connect with the music and your partner in a truly captivating way.",
+    image: "/bachata.png",
     link: "/bachata",
-  },
-  {
-    title: "Merengue",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eaque suscipit officiis nesciunt magni ipsum consequuntur tenetur explicabo natus? Harum.",
-    image: "/mercopi.jpeg",
-    link: "/merengue",
   },
 ]
 
 export default function Page() {
   return (
-    <main className="text-center px-5">
-        <BanClasses />
-        <p className="mt-6 max-w-2xl mx-auto text-lg font-semibold">
-          Dance in an environment that fosters joy and cultural connection. Our Latin dance classes offer a lively and welcoming space where you can explore Salsa, Bachata, and Merengue. These dances are not just about steps but about creating a harmonious and expressive experience with your partner. Join us and let your creativity shine on the dance floor while learning how to move in sync and enhance your dance connection.
+    <main className="text-center">
+        <Banner imageSrc="/dancing.jpg" title="Our Classes" />
+        <p className="mt-6 max-w-[60rem] mx-auto text-lg ">
+          Step into a space filled with energy and warmth, 
+          where every movement brings you closer to the joy 
+          of dance and cultural connection. 
+          Our Latin dance classes are designed to be more than
+          just learning steps—they’re an invitation to discover
+           the rhythm within, connect with others,
+            and have fun in a lively, welcoming atmosphere. 
+            Whether you’re new to Salsa, or Bachata, 
+            you’ll find a supportive community here that helps you 
+            embrace the dance floor with confidence and creativity. 
+            Join us, and start your journey to mastering these vibrant 
+            dances while making new friends along the way.
         </p>
         <div className="mt-12 flex flex-col items-center w-full">
           {courses.map ((course) => (

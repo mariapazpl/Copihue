@@ -13,7 +13,7 @@ interface CourseCardProps {
 export default function CourseCard({ course }: CourseCardProps) {
     return (
       <div className="flex flex-col md:flex-row items-center md:items-start my-8 space-y-4 md:space-y-0 md:space-x-8 w-full max-w-4xl">
-        <div className="w-full md:w-1/3 h-72 md:h-48 relative">
+        <div className="w-full md:w-1/3 h-96 md:h-64 relative">
           <Image
             src={course.image}
             alt={course.title}

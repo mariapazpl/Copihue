@@ -16,6 +16,10 @@ const navLinks = [
     {
         href: "/schedules",
         label: "Schedules"
+    },
+    {
+        href: "/instructors",
+        label: "Our Instructors"
     }
 ]
 
