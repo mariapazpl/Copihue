@@ -61,7 +61,7 @@ To run this project locally, follow these steps:
 ## Development Roadmap
 
 - **Phase 1**: Complete the homepage design and ensure full responsiveness across all devices.
-- **Phase 2**: Implement the login system with authentication and user management features.
-- **Phase 3**: Integrate a database (hosted on Vercel) for storing user data, class enrollments, and schedules.
-- **Phase 4**: Enhance the calendar component to allow users to add, edit, and manage their class schedules.
+- **Phase 2**: Enhance the calendar component to allow users to add, edit, and manage their class schedules.
+- **Phase 3**: Implement the login system with authentication and user management features.
+- **Phase 4**: Integrate a database (hosted on Vercel) for storing user data, class enrollments, and schedules.
 - **Phase 5**: Test and deploy the website on Vercel for public use.
