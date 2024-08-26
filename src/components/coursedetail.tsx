@@ -6,10 +6,13 @@ interface CourseDetailProps {
     description: string;
     image: string;
     isAvailable: boolean;
+    pricing: string;
+    duration: string;
+    location: string;
     link?: string;
 }
 
-export default function CourseDetail({ title, description, image, isAvailable, link ="/schedules" }: CourseDetailProps) {
+export default function CourseDetail({ title, description, image, isAvailable, pricing, duration, location, link ="/schedules" }: CourseDetailProps) {
   return (
     <div className="flex flex-col md:flex-row items-center md:items-start my-8 space-y-4 md:space-y-0 md:space-x-8 w-full max-w-4xl mx-auto">
       <div className="w-full md:w-1/3 h-48 relative">
@@ -24,6 +27,10 @@ export default function CourseDetail({ title, description, image, isAvailable, l
       </div>
       <div className="text-left max-w-md py-2">
         <p className="text-gray-700 mb-4">{description}</p>
+        <p className="text-gray-700 mb-4"><strong>Pricing:</strong>{pricing}</p>
+        <p className="text-gray-700 mb-4"><strong>Schedule:</strong>{duration}</p>
+        <p className="text-gray-700 mb-4"><strong>Location:</strong>{location}</p>
+
         {isAvailable ? (
           <Link href={link}> 
           <button className="inline-block bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">Enroll Now</button>
