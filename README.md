@@ -29,39 +29,30 @@ This project is a dynamic and interactive website for a dance studio, built usin
 To run this project locally, follow these steps:
 
 1. Clone the repository:
-
     ```bash
     git clone https://github.com/mariapazpl/Copihue.git
     ```
-
 2. Navigate to the project directory:
-
     ```bash
     cd Copihue
     ```
-
 3. Install the dependencies:
-
     ```bash
     npm install
     ```
-
 4. Run the development server:
-
     ```bash
     npm run dev
     ```
-
 5. Open your browser and navigate to:
-
     ```
     http://localhost:3000
     ```
-
+    
 ## Development Roadmap
 
-- **Phase 1**: Complete the homepage design and ensure full responsiveness across all devices.
-- **Phase 2**: Implement the login system with authentication and user management features.
-- **Phase 3**: Integrate a database (hosted on Vercel) for storing user data, class enrollments, and schedules.
-- **Phase 4**: Enhance the calendar component to allow users to add, edit, and manage their class schedules.
-- **Phase 5**: Test and deploy the website on Vercel for public use.
+- **Phase 1**: (COMPLETED) Complete the homepage design and ensure full responsiveness across all devices.
+- **Phase 2**: (COMPLETED) Build the calendar to allow users to add, edit, and manage their class schedules.
+- **Phase 3**: (Target Sep 2024) Implement the login system with authentication and user management features.
+- **Phase 4**: (Target Sep 2024) Integrate a database (hosted on Vercel) for storing user data, class enrollments, and schedules.
+- **Phase 5**: (Target Oct 2024) Test and deploy the website on Vercel for public use.
