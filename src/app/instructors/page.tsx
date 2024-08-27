@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function Page() {
     return (
         <main>
-            <Banner imageSrc="/bannerinst.jpg" title="Meet Our Instructors" />
+            <Banner imageSrc="/bannerInst.jpg" title="Meet Our Instructors" />
             <div className="mt-12 flex flex-col md:flex-row items-center mb-12 px-5 md:px-20">
                 <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-4 md:mb-0 md:mr-8 flex-shrink-0">
                     <Image

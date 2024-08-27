@@ -36,7 +36,7 @@ export default function Page() {
 
     return (
     <main className="text-center">
-      <Banner imageSrc="/hero.png" title="Bachata" />
+      <Banner imageSrc="/Hero.png" title="Bachata" />
       <div className="my-20">
         {courseDetails.map((course, index) => (
           <CourseDetail key={index} {...course} />
