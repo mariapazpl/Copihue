@@ -6,7 +6,7 @@ export default function Footer() {
         (437) 388-2081 | copihuedancestudio@gmail.com | 25 Capreol Court, Toronto ON, M5V 3Z7
         </p>
       </div>
-      <small>&copy; Copihue Dance Studio 2024. All rights reserved</small>
+      <small>&copy; 2024 Copihue Dance Studio. All rights reserved.</small>
     </footer>
   )
 }
