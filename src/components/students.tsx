@@ -6,7 +6,7 @@ export default function Students() {
     <section className="py-12 text-center min-h-screen flex flex-col justify-center">
       <h2 className="text-3xl font-bold mb-6">Join Our Community</h2>
       <p className="text-lg text-zinc-700 mt-4 max-w-xl mx-auto mb-8">
-        Ready to dance your heart out? Whether you're new to salsa or a seasoned pro, our community is the perfect place to get moving, make friends, and have fun. Sign up to kick off your dance adventure or sign in to keep the rhythm going with us.            
+        Ready to dance your heart out? Whether you&apos;re new to salsa or a seasoned pro, our community is the perfect place to get moving, make friends, and have fun. Sign up to kick off your dance adventure or sign in to keep the rhythm going with us.            
       </p>
       <div className='flex justify-center'> 
         <Link href="/schedules" legacyBehavior>

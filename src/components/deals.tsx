@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Deals({ onJoinClick }: { onJoinClick: (title: string, type: string, date: string, instructor: string, pricing: string, duration: string, location: string) => void }) {
   return (
@@ -7,7 +8,7 @@ export default function Deals({ onJoinClick }: { onJoinClick: (title: string, ty
       
       {/* Deal 1: Beginner Bachata */}
       <div className="flex items-center border-b border-gray-300 py-6">
-        <img src="/bacha.jpg" alt="Beginner Bachata" className="w-28 h-28 object-cover mr-6" />
+        <Image src="/bacha.jpg" alt="Beginner Bachata" className="w-28 h-28 object-cover mr-6" />
         <div>
           <h3 className="text-xl font-semibold mb-2">Beginner Bachata</h3>
           <p className="text-sm mb-2">Oct 7, 2024 - Nov 25, 2024</p>
@@ -24,7 +25,7 @@ export default function Deals({ onJoinClick }: { onJoinClick: (title: string, ty
 
       {/* Deal 2: Beginner Salsa */}
       <div className="flex items-center py-6">
-        <img src="/salsa2.jpg" alt="Beginner Salsa" className="w-28 h-28 object-cover mr-6" />
+        <Image src="/salsa2.jpg" alt="Beginner Salsa" className="w-28 h-28 object-cover mr-6" />
         <div>
           <h3 className="text-xl font-semibold mb-2">Beginner Salsa</h3>
           <p className="text-sm mb-2">Oct 10, 2024 - Nov 28, 2024</p>

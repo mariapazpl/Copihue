@@ -20,7 +20,7 @@ export default function CoursesSection() {
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-6">Our Courses</h2>
         <p className="text-lg text-zinc-700 mt-4 max-w-xl mx-auto mb-8">
-          Dive into the rhythm with our expertly crafted Salsa and Bachata courses, designed to take you from beginner to pro. Whether you're just starting or looking to refine your skills, our levels cater to every dancer's journey.        
+          Dive into the rhythm with our expertly crafted Salsa and Bachata courses, designed to take you from beginner to pro. Whether you&apos;re just starting or looking to refine your skills, our levels cater to every dancer&apos;s journey.        
         </p>
       </div>
       <div className="flex flex-wrap justify-center gap-12">
