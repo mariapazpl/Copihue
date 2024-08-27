@@ -1,6 +1,6 @@
 // pages/api/book.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
-import pool from '@/server/db'; // Adjust the path if necessary
+import pool from '@/server/db'; 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
@@ -21,7 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // Insert booking into the database and get the inserted id
       const queryBooking = `
-        INSERT INTO bookings (userId, eventTitle, eventType, eventDate, instructor, leaders, followers, location, time)
+        INSERT INTO bookings (user_id, event_title, event_type, event_date, instructor, leaders, followers, location, time)
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING id
       `;
