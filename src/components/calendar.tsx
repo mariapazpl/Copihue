@@ -29,7 +29,7 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto mb-12">
+    <div className="max-w-4xl mx-auto">
       <FullCalendar 
         plugins={[
           dayGridPlugin,
@@ -91,6 +91,7 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
             info.el.style.color = '#9ca3af'; // Tailwind gray-500
           }
         }}
+        height="130vh" // Adjust the height as needed
       />
     </div>
   );

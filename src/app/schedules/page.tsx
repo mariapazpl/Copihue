@@ -1,7 +1,6 @@
 "use client"
 
 import Calendar from '@/components/calendar'; // Adjust path as necessary
-import Deals from '@/components/deals'; // Adjust path as necessary
 import { useState, useEffect } from 'react';
 import Modal from '@/components/modal'; // Adjust path as necessary
 import { useRouter } from 'next/navigation';
@@ -43,12 +42,12 @@ export default function Page() {
 
   return (
     <>
-      {/* <nav className="flex justify-center mb-12 border-violet-100 p-4">
-        <h1 className="font-bold text-2xl text-zinc-700">Drop-in Classes!</h1>
-      </nav> */}
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <Calendar onJoinClick={handleJoinClick} />
-        {/* <Deals onJoinClick={handleJoinClick} /> */}
+      <main className="flex flex-col min-h-screen">
+        <div className="flex-grow p-4">
+          <div className="mt-8"> 
+            <Calendar onJoinClick={handleJoinClick} />
+          </div>
+        </div>        
         {/* Modal Component */}
         <Modal
           isOpen={isModalOpen}
@@ -61,7 +60,6 @@ export default function Page() {
           duration={selectedDuration}
           location={selectedLocation}
         />
-        
       </main>
     </>
   );

@@ -1,5 +1,6 @@
 import Banner from "@/components/banner";
 import CourseDetail from "@/components/coursedetail";
+import Link from "next/link";
 
 export default function Page() {
     const courseDetails = [
@@ -39,6 +40,13 @@ export default function Page() {
         {courseDetails.map((course, index) => (
           <CourseDetail key={index} {...course} />
         ))}
+      </div>
+      <div className="my-20">
+        <h2 className="text-2xl font-semibold mb-4">Interested in Other Dance Styles?</h2>
+        <p className="text-lg mb-4">If you enjoyed Salsa, you might also love our Bachata classes! Explore a new rhythm and dance style with us.</p>
+        <Link href="/bachata" legacyBehavior>
+          <a className="text-blue-500 underline">Check out our Bachata classes!</a>
+        </Link>
       </div>
     </main>
   )
