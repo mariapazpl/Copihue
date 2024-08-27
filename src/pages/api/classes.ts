@@ -20,8 +20,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       const userId = userRows[0].id;
+      console.log('Querying user:', username);
+      console.log('User Rows:', userRows);
+      console.log('Fetching bookings for user ID:', userId);
 
-      // Fetch bookings including the booking ID
+
       const queryBookings = `
         SELECT id, eventTitle, eventType, eventDate, instructor, location, time 
         FROM bookings 
@@ -29,10 +32,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       `;
       const valuesBookings = [userId];
       const { rows: bookingRows } = await pool.query(queryBookings, valuesBookings);
-
       res.status(200).json(bookingRows);
     } catch (error) {
-      console.error('Error fetching bookings:', error);
+      console.error('Error fetching bookings:', (error as Error).message, (error as Error).stack);
       res.status(500).json({ message: 'Internal server error' });
     }
   } else {
