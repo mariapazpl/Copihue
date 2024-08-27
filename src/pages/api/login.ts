@@ -10,15 +10,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { username, password } = req.body;
 
     try {
-      const connection = await pool.getConnection();
-      console.log('Database connection successful.');
-
       // Query to get the user based on the username
-      const [rows]: any[] = await connection.query(
-        'SELECT * FROM users WHERE username = ?',
-        [username]
-      );
-      connection.release();
+      const query = 'SELECT * FROM users WHERE username = $1';
+      const values = [username];
+      const { rows } = await pool.query(query, values);
 
       if (rows.length === 0) {
         return res.status(401).json({ error: 'Invalid username or password' });

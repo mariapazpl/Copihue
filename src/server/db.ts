@@ -1,20 +1,17 @@
-import mysql from 'mysql2/promise';
+import { Pool } from 'pg';
 
-// Create a MySQL connection pool
-const pool = mysql.createPool({
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE_NAME,
+// Create a PostgreSQL connection pool
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL, // Use the connection string from your environment variables
 });
 
 // Function to test the database connection
 async function testConnection() {
   try {
     console.log('Testing database connection...');
-    const connection = await pool.getConnection();
+    const client = await pool.connect();
     console.log('Successfully connected to the database.');
-    connection.release(); // Release the connection back to the pool
+    client.release(); // Release the connection back to the pool
   } catch (error) {
     // Type assertion to handle unknown error type
     if (error instanceof Error) {

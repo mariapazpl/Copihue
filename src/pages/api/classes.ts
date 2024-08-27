@@ -1,20 +1,19 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import pool from "@/server/db"; // adjust the path as needed
+import pool from "@/server/db"; // Adjust the path as needed
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
     try {
       const { username } = req.query;
 
-      if (!username) {
+      if (!username || typeof username !== 'string') {
         return res.status(400).json({ message: 'Username is required' });
       }
 
       // Fetch the user ID based on the username
-      const [userRows] = await pool.query<any[]>(
-        'SELECT id FROM users WHERE username = ?',
-        [username]
-      );
+      const queryUser = 'SELECT id FROM users WHERE username = $1';
+      const valuesUser = [username];
+      const { rows: userRows } = await pool.query(queryUser, valuesUser);
 
       if (userRows.length === 0) {
         return res.status(404).json({ message: 'User not found' });
@@ -23,12 +22,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const userId = userRows[0].id;
 
       // Fetch bookings including the booking ID
-      const [bookingRows] = await pool.query(
-        `SELECT id, eventTitle, eventType, eventDate, instructor, location, time 
-         FROM bookings 
-         WHERE userId = ?`, 
-        [userId]
-      );
+      const queryBookings = `
+        SELECT id, eventTitle, eventType, eventDate, instructor, location, time 
+        FROM bookings 
+        WHERE userId = $1
+      `;
+      const valuesBookings = [userId];
+      const { rows: bookingRows } = await pool.query(queryBookings, valuesBookings);
 
       res.status(200).json(bookingRows);
     } catch (error) {
