@@ -30,8 +30,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // Fetch bookings for the user
       const queryBookings = `
-        SELECT id, eventTitle, eventType, eventDate, instructor, location, time 
-        FROM bookings 
+        SELECT id, event_title, event_type, event_date, instructor, location, time  
         WHERE userId = $1
       `;
       const valuesBookings = [userId];
