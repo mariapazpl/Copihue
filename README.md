@@ -2,7 +2,11 @@
 
 ## Overview
 
-This project is a dynamic and interactive website for a dance studio, built using modern web development technologies. The goal was to create a platform where users can explore dance classes, view schedules, and enroll in courses directly through the site. Please access the website through the link in the title.
+This project is a dynamic and interactive website for a dance studio, built using modern web development technologies. The goal was to create a platform where users can explore dance classes, view schedules, and enroll in courses directly through the site. Please access the website at https://copihue.vercel.app/.
+
+## UX/UI Prototype
+
+Prior to development, a prototype was created using Figma to help visualize the user experience and design elements. You can view the Figma prototype here: [Copihue Dance Studio Prototype](https://www.figma.com/proto/5rlm0PDjD8TNnY94KMAR3Q/SalsaStudio?node-id=5-2&t=25PNosoMCPI9jBca-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1)
 
 ## Technologies Used
 
@@ -61,3 +65,4 @@ To run this project locally, follow these steps:
 - **Phase 4**: (COMPLETED) Integrate a PostgreSQL database (hosted on Vercel) for storing user data, class enrollments, and schedules.
 - **Phase 5**: (COMPLETED) Deploy the website on Vercel for public use.
 - **Phase 6**: (Ongoing) Gather user feedback, fix bugs, and continuously improve the platform.
+
