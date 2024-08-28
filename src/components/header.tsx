@@ -53,13 +53,13 @@ export default function Header() {
             <button
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                 className="lg:hidden p-2 text-zinc-900">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
             </button>
 
             {/* Sidebar */}
-            <div className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out lg:hidden`}>
+            <div className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out lg:hidden`}>
                 <div className="flex justify-end p-4">
                     <button
                         onClick={() => setIsSidebarOpen(false)}
@@ -80,11 +80,19 @@ export default function Header() {
                                 {link.label}
                         </Link>
                     ))}
+                    {/* SignInOut button is Sidebar for Mobile */}
+                    <div className="mt-4">
+                        <SignInOut 
+                            isLoggedIn={isLoggedIn} 
+                            onSignIn={handleSignIn} 
+                            onSignOut={handleSignOut} 
+                        />
+                    </div>
                 </nav>
             </div>
 
             {/* Navigation links for larger screens */}
-            <nav className="hidden lg:flex items-center gap-x-5">
+            <div className="hidden lg:flex items-center gap-x-5">
                 <ul className="flex gap-x-5 text-[16px]">
                     {navLinks.map((link) => (
                         <li key={link.href}>
@@ -98,13 +106,12 @@ export default function Header() {
                         </li>
                     ))}
                 </ul>
-            </nav>
-
-            <SignInOut 
+                <SignInOut 
                 isLoggedIn={isLoggedIn} 
                 onSignIn={handleSignIn} 
                 onSignOut={handleSignOut}
-            />
+                />
+            </div>
         </header>
     );
 }
