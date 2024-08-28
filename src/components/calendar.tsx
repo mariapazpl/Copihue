@@ -40,7 +40,7 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
         headerToolbar={{
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          // right: 'dayGridMonth,timeGridWeek,timeGridDay'
         }}
         events={[
           {
@@ -77,8 +77,13 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
         selectMirror={true}
         eventContent={({ event }) => {
           return (
-            <div className="flex flex-col">
-              <span>{event.title}</span>
+            <div className="flex flex-col text-xs lg:text-base text-center">
+              {event.title.split(' ').map((word, index) => (
+                <span key={index} className='block'>
+                  {word}
+                </span>
+              ))}
+              {/* <span>{event.title}</span> */}
               <span className="text-sm">7 PM</span>
             </div>
           );
@@ -91,7 +96,7 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
             info.el.style.color = '#9ca3af'; // Tailwind gray-500
           }
         }}
-        height="130vh" // Adjust the height as needed
+        height="130vh" 
       />
     </div>
   );
