@@ -90,9 +90,8 @@ const Modal: React.FC<ModalProps> = ({
         </button>
         <h2 className="text-xl font-bold mb-4">Book Your Spot for {eventTitle}</h2>
         <p className="mb-4">Class Date and Time: {eventDate} at 7 PM</p>
-        <p className="mb-4">{eventType}</p>
         <p className="mb-4">Instructor: {instructor}</p>
-        <p className="mb-4">Pricing: {pricing}</p>
+        <p className="mb-4">Pricing: {pricing} per person</p>
         <p className="mb-4">Duration: {duration}</p>
         <p className="mb-4">Location: {location}</p>
         <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); handleBooking(); }}>
@@ -107,7 +106,7 @@ const Modal: React.FC<ModalProps> = ({
                 onChange={() => setSelectedRole('leaders')}
                 className="mr-2"
               />
-              <label htmlFor="leaders" className="block text-sm font-medium text-gray-700">Leaders</label>
+              <label htmlFor="leaders" className="block text-sm font-medium text-gray-700">Leader</label>
             </div>
             {selectedRole === 'leaders' || selectedRole === 'both' ? (
               <div className="ml-4">
@@ -134,7 +133,7 @@ const Modal: React.FC<ModalProps> = ({
                 onChange={() => setSelectedRole('followers')}
                 className="mr-2"
               />
-              <label htmlFor="followers" className="block text-sm font-medium text-gray-700">Followers</label>
+              <label htmlFor="followers" className="block text-sm font-medium text-gray-700">Follower</label>
             </div>
             {selectedRole === 'followers' || selectedRole === 'both' ? (
               <div className="ml-4">
@@ -170,7 +169,7 @@ const Modal: React.FC<ModalProps> = ({
             <a href="mailto:copihuedancestudio@gmail.com" className="text-blue-600">
               copihuedancestudio@gmail.com
             </a>{' '}
-            at least 24 hours before the class.
+            at least 24 hours before the class. A receipt will be sent by email upon payment.
           </div>
           <div className="flex justify-between">
             <button

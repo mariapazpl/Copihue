@@ -85,7 +85,7 @@ export default function ProfilePage() {
         <section className="mb-8 p-4 border border-gray-300 rounded shadow-sm">
           <h2 className="text-2xl font-semibold mb-2">Past Classes</h2>
           {bookings.filter(booking => booking.eventType === 'Drop-in' && new Date(booking.eventDate) < today).length === 0 ? (
-            <p>No passed drop-in classes found.</p>
+            <p>No past drop-in classes found.</p>
           ) : (
             bookings.filter(booking => booking.eventType === 'Drop-in' && new Date(booking.eventDate) < today)
               .map((booking) => (
@@ -95,7 +95,8 @@ export default function ProfilePage() {
                   <p>Time: {booking.time}</p>
                   <p>Location: {booking.location}</p>
                   <p>Instructor: {booking.instructor}</p>
-                  <p>ID: {booking.id}</p> {/* Ensure this line is included */}
+                  <p className='text-sm'>To confirm this booking, payment must be made by e-transfer to{' '}<a href="mailto:copihuedancestudio@gmail.com" className="text-blue-600">copihuedancestudio@gmail.com</a>{' '}at least 24 hours before the class. A receipt will be sent by email upon payment.</p>
+                  {/* <p>ID: {booking.id}</p> Ensure this line is included */}
                 </div>
               ))
           )}
