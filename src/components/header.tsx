@@ -37,12 +37,6 @@ export default function Header() {
         router.push('/account?form=login');
     };
 
-    // const handleLoginSuccess = () => {
-    //     setIsLoggedIn(true);  // Update the login state immediately
-
-    //     router.refresh();
-    // };
-
     return (
         <header className="flex justify-between items-center py-4 px-7 border-b bg-transparent z-20">
             <Link href="/">
@@ -56,7 +50,7 @@ export default function Header() {
             </Link>
             
             <nav className="flex items-center gap-x-5">
-                <ul className="flex gap-x-5 text-[16px]">
+                <ul className="flex gap-x-5 text-[16px] sm:text-[14px]">
                     {navLinks.map((link) => (
                         <li key={link.href}>
                             <Link 
@@ -71,7 +65,11 @@ export default function Header() {
                 </ul>
             </nav>
 
-            <SignInOut isLoggedIn={isLoggedIn} onSignIn={handleSignIn} onSignOut={handleSignOut} />
+            <SignInOut 
+                isLoggedIn={isLoggedIn} 
+                onSignIn={handleSignIn} 
+                onSignOut={handleSignOut}
+            />
         </header>
     );
 }

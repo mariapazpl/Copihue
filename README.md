@@ -20,9 +20,6 @@ This project is a dynamic and interactive website for a dance studio, built usin
 - **Full-Screen Sections**: Each section on the homepage is designed to occupy the full screen height for a modern, immersive experience.
 - **User Authentication**: Secure login system allowing users to create accounts, join drop-in classes, and enroll in courses.
 - **Booking Management**: Users can book, view, and manage their class enrollments directly through their profile.
-- **Participant Control**: Ensures that classes can only be booked if the number of participants is greater than zero.
-- **Past Class Restriction**: Users are prevented from booking classes that have already occurred.
-- **Cancellation Feature**: Users can cancel upcoming classes directly from their profile.
 
 ## Installation
 

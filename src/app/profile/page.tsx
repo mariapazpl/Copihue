@@ -85,7 +85,7 @@ export default function ProfilePage() {
         <section className="mb-8 p-4 border border-gray-300 rounded shadow-sm">
           <h2 className="text-2xl font-semibold mb-2">Past Classes</h2>
           {bookings.filter(booking => booking.eventType === 'Drop-in' && new Date(booking.eventDate) < today).length === 0 ? (
-            <p>No past drop-in classes found.</p>
+            <p>No past classes found.</p>
           ) : (
             bookings.filter(booking => booking.eventType === 'Drop-in' && new Date(booking.eventDate) < today)
               .map((booking) => (

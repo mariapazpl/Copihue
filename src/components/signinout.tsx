@@ -25,7 +25,7 @@ export default function SignInOut({ isLoggedIn, onSignIn, onSignOut }: SignInOut
     <button
       //onClick={isLoggedIn ? onSignOut : () => window.location.href = '/account?form=login'}
       onClick={handleClick}
-      className="ml-5 p-2 bg-red-400 text-white font-bold rounded hover:bg-red-500"
+      className="ml-5 p-2 bg-red-400 text-white font-bold rounded hover:bg-red-500 text-sm md:text-base lg:text-lg"
     >
       {isLoggedIn ? 'Sign Out' : 'Sign In'}
     </button>
