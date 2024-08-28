@@ -30,8 +30,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // Fetch bookings for the user
       const queryBookings = `
-        SELECT id, event_title, event_type, event_date, instructor, location, time  
-        WHERE userId = $1
+        SELECT id, event_title AS "eventTitle", event_type AS "eventType", event_date AS "eventDate", 
+               instructor, location, time  
+        FROM bookings 
+        WHERE user_id = $1
       `;
       const valuesBookings = [userId];
       const { rows: bookingRows } = await pool.query(queryBookings, valuesBookings);

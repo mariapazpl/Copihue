@@ -23,6 +23,8 @@ export default function ProfilePage() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
+
+    console.log('username is:', username);
   
     if (!token) {
       localStorage.setItem('redirectUrl', window.location.pathname);
