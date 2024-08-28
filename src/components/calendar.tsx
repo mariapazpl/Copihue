@@ -29,7 +29,7 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
   };
 
   return (
-    <div className="w-full mx-auto">
+    <div className="max-w-4xl mx-auto">
       <FullCalendar 
         plugins={[
           dayGridPlugin,
