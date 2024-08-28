@@ -39,8 +39,8 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
         ]}
         headerToolbar={{
           left: 'prev,next today',
-          center: 'title',
-          right: '', 
+          center: '',
+          right: 'title', 
         }}
         events={[
           {
@@ -83,8 +83,7 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
                   {word}
                 </span>
               ))}
-              {/* <span>{event.title}</span> */}
-              <span className="text-sm lg:text-sm">7 PM</span>
+              <span className="text-xs lg:text-sm">7 PM</span>
             </div>
           );
         }}
@@ -96,7 +95,11 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
             info.el.style.color = '#9ca3af'; // Tailwind gray-500
           }
         }}
-        height="130vh" 
+        height="auto" // Automatically adjusts to avoid vertical scroll
+        contentHeight="auto" // Makes sure the content fits the available height
+        fixedWeekCount={false} // Ensures the calendar doesn't show extra weeks
+        dayMaxEventRows={true} // Limits the number of events per day to avoid overflow
+        expandRows={true} // Expands rows to fill available space
       />
     </div>
   );
