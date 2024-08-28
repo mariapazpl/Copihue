@@ -29,7 +29,7 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="w-full mx-auto">
       <FullCalendar 
         plugins={[
           dayGridPlugin,
@@ -40,7 +40,7 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
         headerToolbar={{
           left: 'prev,next today',
           center: 'title',
-          // right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          right: '', 
         }}
         events={[
           {
@@ -77,14 +77,14 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
         selectMirror={true}
         eventContent={({ event }) => {
           return (
-            <div className="flex flex-col text-xs lg:text-base text-center">
+            <div className="flex flex-col text-xs lg:text-sm text-center">
               {event.title.split(' ').map((word, index) => (
                 <span key={index} className='block'>
                   {word}
                 </span>
               ))}
               {/* <span>{event.title}</span> */}
-              <span className="text-sm">7 PM</span>
+              <span className="text-sm lg:text-sm">7 PM</span>
             </div>
           );
         }}
