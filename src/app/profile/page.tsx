@@ -95,7 +95,6 @@ export default function ProfilePage() {
                   <p>Time: {booking.time}</p>
                   <p>Location: {booking.location}</p>
                   <p>Instructor: {booking.instructor}</p>
-                  <p className='text-sm'>To confirm this booking, payment must be made by e-transfer to{' '}<a href="mailto:copihuedancestudio@gmail.com" className="text-blue-600">copihuedancestudio@gmail.com</a>{' '}at least 24 hours before the class. A receipt will be sent by email upon payment.</p>
                   {/* <p>ID: {booking.id}</p> Ensure this line is included */}
                 </div>
               ))
@@ -116,7 +115,7 @@ export default function ProfilePage() {
                     <p>Time: {booking.time}</p>
                     <p>Location: {booking.location}</p>
                     <p>Instructor: {booking.instructor}</p>
-                    <p className='text-sm'>To confirm this booking, payment must be made by e-transfer to{' '}<a href="mailto:copihuedancestudio@gmail.com" className="text-blue-600">copihuedancestudio@gmail.com</a>{' '}at least 24 hours before the class. A receipt will be sent by email upon payment.</p>
+                    <p className='text-xs'>To confirm this booking, payment must be made by e-transfer to{' '}<a href="mailto:copihuedancestudio@gmail.com" className="text-blue-600">copihuedancestudio@gmail.com</a>{' '}at least 24 hours before the class. A receipt will be sent by email upon payment.</p>
                     {/* <p>ID: {booking.id}</p> Ensure this line is included */}
                   </div>
                   <button

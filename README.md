@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a dynamic and interactive website for a dance studio, built using modern web development technologies. The goal is to create a platform where users can explore dance classes, view schedules, and enroll in courses directly through the site.
+This project is a dynamic and interactive website for a dance studio, built using modern web development technologies. The goal was to create a platform where users can explore dance classes, view schedules, and enroll in courses directly through the site. Please access the website through the link in the title.
 
 ## Technologies Used
 
