@@ -122,7 +122,7 @@ const Modal: React.FC<ModalProps> = ({
                   max="5"
                   value={leaders}
                   onChange={(e) => setLeaders(e.target.value)}
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm bg-gray-100"
                   required={selectedRole === 'leaders' || selectedRole === 'both'}
                 />
               </div>
@@ -149,7 +149,7 @@ const Modal: React.FC<ModalProps> = ({
                   max="5"
                   value={followers}
                   onChange={(e) => setFollowers(e.target.value)}
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm bg-gray-100"
                   required={selectedRole === 'followers' || selectedRole === 'both'}
                 />
               </div>
