@@ -23,18 +23,23 @@ const Modal: React.FC<ModalProps> = ({
   duration,
   location,
 }) => {
-  const [leaders, setLeaders] = useState(0);
-  const [followers, setFollowers] = useState(0);
+  const [leaders, setLeaders] = useState<string>('');
+  const [followers, setFollowers] = useState<string>('');
   const [selectedRole, setSelectedRole] = useState<'leaders' | 'followers' | 'both' | ''>('');
 
   if (!isOpen) return null;
 
   const handleBooking = async () => {
+
+    const leadersCount = leaders === '' ? 0 : Number(leaders);
+    const followersCount = leaders === '' ? 0 : Number(leaders);
+
+
     if (
       selectedRole === '' ||
-      (selectedRole === 'leaders' && leaders === 0) ||
-      (selectedRole === 'followers' && followers === 0) ||
-      (selectedRole === 'both' && (leaders === 0 || followers === 0))
+      (selectedRole === 'leaders' && leadersCount === 0) ||
+      (selectedRole === 'followers' && followersCount === 0) ||
+      (selectedRole === 'both' && (leadersCount === 0 || followersCount === 0))
     ) {
       alert('Please select a role and specify the number of participants.');
       return;
@@ -116,7 +121,7 @@ const Modal: React.FC<ModalProps> = ({
                   min="1"
                   max="5"
                   value={leaders}
-                  onChange={(e) => setLeaders(Number(e.target.value))}
+                  onChange={(e) => setLeaders(e.target.value)}
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                   required={selectedRole === 'leaders' || selectedRole === 'both'}
                 />
@@ -143,7 +148,7 @@ const Modal: React.FC<ModalProps> = ({
                   min="1"
                   max="5"
                   value={followers}
-                  onChange={(e) => setFollowers(Number(e.target.value))}
+                  onChange={(e) => setFollowers(e.target.value)}
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                   required={selectedRole === 'followers' || selectedRole === 'both'}
                 />
