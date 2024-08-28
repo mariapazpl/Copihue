@@ -42,7 +42,7 @@ export default function Register({ toggleForm }: RegisterProps) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username: registerUsername,
+          username: registerUsername.toLowerCase(),
           email: registerEmail,
           password: registerPassword,
         }),
