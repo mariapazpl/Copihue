@@ -23,18 +23,21 @@ const Modal: React.FC<ModalProps> = ({
   duration,
   location,
 }) => {
-  const [leaders, setLeaders] = useState(0);
-  const [followers, setFollowers] = useState(0);
+  const [leaders, setLeaders] = useState<string>('');
+  const [followers, setFollowers] = useState<string>('');
   const [selectedRole, setSelectedRole] = useState<'leaders' | 'followers' | 'both' | ''>('');
 
   if (!isOpen) return null;
 
   const handleBooking = async () => {
+    const leadersCount = leaders === '' ? 0 : Number(leaders);
+    const followersCount = followers === '' ? 0 : Number(followers);
+
     if (
       selectedRole === '' ||
-      (selectedRole === 'leaders' && leaders === 0) ||
-      (selectedRole === 'followers' && followers === 0) ||
-      (selectedRole === 'both' && (leaders === 0 || followers === 0))
+      (selectedRole === 'leaders' && leadersCount === 0) ||
+      (selectedRole === 'followers' && followersCount === 0) ||
+      (selectedRole === 'both' && (leadersCount === 0 || followersCount === 0))
     ) {
       alert('Please select a role and specify the number of participants.');
       return;
@@ -51,8 +54,8 @@ const Modal: React.FC<ModalProps> = ({
       eventType,
       eventDate,
       instructor,
-      leaders,
-      followers,
+      leaders: leadersCount,
+      followers: followersCount,
       username,
       location: '25 Capreol Court, Toronto ON',
       time: '7 PM',
@@ -113,12 +116,11 @@ const Modal: React.FC<ModalProps> = ({
                 <label className="block text-sm font-medium text-gray-700">Number of Leaders:</label>
                 <input
                   type="number"
-                  min="1"
-                  max="5"
+                  min="0"
                   value={leaders}
-                  onChange={(e) => setLeaders(Number(e.target.value))}
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                  required={selectedRole === 'leaders' || selectedRole === 'both'}
+                  onChange={(e) => setLeaders(e.target.value)}
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm bg-gray-200"
+                  placeholder="Optional"
                 />
               </div>
             ) : null}
@@ -140,12 +142,11 @@ const Modal: React.FC<ModalProps> = ({
                 <label className="block text-sm font-medium text-gray-700">Number of Followers:</label>
                 <input
                   type="number"
-                  min="1"
-                  max="5"
+                  min="0"
                   value={followers}
-                  onChange={(e) => setFollowers(Number(e.target.value))}
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                  required={selectedRole === 'followers' || selectedRole === 'both'}
+                  onChange={(e) => setFollowers(e.target.value)}
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm bg-gray-200"
+                  placeholder="Optional"
                 />
               </div>
             ) : null}
