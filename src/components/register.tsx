@@ -31,6 +31,21 @@ export default function Register({ toggleForm }: RegisterProps) {
   };
 
   const handleSubmit = async () => {
+    if (!registerUsername.trim()) {
+      alert('Username cannot be empty.')
+      return;
+    }
+
+    if (!registerEmail.trim()) {
+      alert('Email cannot be empty.')
+      return;
+    }
+
+    if (!registerPassword.trim()) {
+      alert('Password cannot be empty.')
+      return;
+    }
+
     if (registerPassword !== confirmPassword) {
       alert('Passwords do not match!');
       return;
