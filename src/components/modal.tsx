@@ -120,7 +120,6 @@ const Modal: React.FC<ModalProps> = ({
                   value={leaders}
                   onChange={(e) => setLeaders(e.target.value)}
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm bg-gray-200"
-                  placeholder="Optional"
                 />
               </div>
             ) : null}
@@ -146,7 +145,6 @@ const Modal: React.FC<ModalProps> = ({
                   value={followers}
                   onChange={(e) => setFollowers(e.target.value)}
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm bg-gray-200"
-                  placeholder="Optional"
                 />
               </div>
             ) : null}

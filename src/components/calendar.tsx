@@ -71,8 +71,8 @@ export default function Calendar({ onJoinClick }: CalendarProps) {
           }
         ]}
         nowIndicator={true}
-        editable={true}
-        droppable={true}
+        editable={false}
+        droppable={false}
         selectable={true}
         selectMirror={true}
         eventContent={({ event }) => {
