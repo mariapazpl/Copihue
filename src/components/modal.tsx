@@ -116,7 +116,8 @@ const Modal: React.FC<ModalProps> = ({
                 <label className="block text-sm font-medium text-gray-700">Number of Leaders:</label>
                 <input
                   type="number"
-                  min="0"
+                  min="1"
+                  max="5"
                   value={leaders}
                   onChange={(e) => setLeaders(e.target.value)}
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm bg-gray-200"
@@ -141,7 +142,8 @@ const Modal: React.FC<ModalProps> = ({
                 <label className="block text-sm font-medium text-gray-700">Number of Followers:</label>
                 <input
                   type="number"
-                  min="0"
+                  min="1"
+                  max="5"
                   value={followers}
                   onChange={(e) => setFollowers(e.target.value)}
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm bg-gray-200"
