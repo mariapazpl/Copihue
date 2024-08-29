@@ -147,13 +147,40 @@ const Modal: React.FC<ModalProps> = ({
                   type="number"
                   min="1"
                   max="5"
-                  value={followers}
+                  value={leaders}
                   onChange={(e) => setFollowers(e.target.value)}
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm bg-gray-200"
                   required={selectedRole === 'followers' || selectedRole === 'both'}
                 />
               </div>
             ) : null}
+
+            {/* <div className="flex items-center">
+              <input
+                type="radio"
+                id="followers"
+                name="role"
+                value="followers"
+                checked={selectedRole === 'followers'}
+                onChange={() => setSelectedRole('followers')}
+                className="mr-2"
+              />
+              <label htmlFor="followers" className="block text-sm font-medium text-gray-700">Follower</label>
+            </div> */}
+            {/* {selectedRole === 'followers' || selectedRole === 'both' ? (
+              <div className="ml-4">
+                <label className="block text-sm font-medium text-gray-700">Number of Followers:</label>
+                <input
+                  type="number"
+                  min="1"
+                  max="5"
+                  value={followers}
+                  onChange={(e) => setFollowers(e.target.value)}
+                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm bg-gray-200"
+                  required={selectedRole === 'followers' || selectedRole === 'both'}
+                />
+              </div>
+            ) : null} */}
 
             <div className="flex items-center">
               <input
