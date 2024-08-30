@@ -37,7 +37,7 @@ export default function Login({ toggleForm, onLoginSuccess }: LoginProps) {
         const data = await response.json();
 
         localStorage.setItem('token', data.token);
-        localStorage.setItem('username', loginUsername);
+        localStorage.setItem('username', loginUsername.toLowerCase());
 
         if (onLoginSuccess) {
           onLoginSuccess();

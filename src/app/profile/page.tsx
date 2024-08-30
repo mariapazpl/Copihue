@@ -32,8 +32,6 @@ export default function ProfilePage() {
       return;
     }
   
-    console.log('Requesting:', `/api/classes?username=${username}`);
-
 
     if (username) {
       axios.get(`/api/classes?username=${username}`)
