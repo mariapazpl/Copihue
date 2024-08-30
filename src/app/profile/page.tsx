@@ -37,6 +37,7 @@ export default function ProfilePage() {
       axios.get(`/api/classes?username=${username}`)
         .then(response => {
           console.log('Fetched bookings:', response.data);  // Debugging log
+          const sortedBookings = response.data.sort((a: Booking, b: Booking) => new Date(a.eventDate).getTime() - new Date(b.eventDate).getTime());
           setBookings(response.data);
           setLoading(false);
         })
