@@ -65,7 +65,7 @@ export default function Register({ toggleForm }: RegisterProps) {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('token', data.token); // Set login state
-        localStorage.setItem('username', registerUsername);
+        localStorage.setItem('username', registerUsername.toLowerCase()f);
         alert('Registration successful');
         router.push('/'); // Redirect to homepage
       } else {
