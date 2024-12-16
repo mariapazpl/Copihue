@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-
+import InfoBanner from "@/components/infoBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +22,7 @@ export default function RootLayout({
       <meta name="google-site-verification" content="nuBpJDvQCjdfFzVmFeWvx4JGXky0FY27l25tLyAEyKs" />      
       <body className={`${inter.className} bg-red-50 text-zinc-900 flex flex-col min-h-screen`} >
         <Header />
+        <InfoBanner />
         {children}
         <Footer />
       </body>
